@@ -14,32 +14,6 @@
   <!--<includeDependencies package="." />-->
 
   <include package=".browser" />
-
-  <include file="permissions.zcml" />
-
-  <genericsetup:registerProfile
-      name="default"
-      title="redturtle.importer.iocomune"
-      directory="profiles/default"
-      description="Installs the redturtle.importer.iocomune add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="redturtle.importer.iocomune (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the redturtle.importer.iocomune add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
-
-  <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="redturtle.importer.iocomune-hiddenprofiles"
-      />
-
-  <!-- -*- extra stuff goes here -*- -->
+  <include package=".transmogrifier" />
 
 </configure>
