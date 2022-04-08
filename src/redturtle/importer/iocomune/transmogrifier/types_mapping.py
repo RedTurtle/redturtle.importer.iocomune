@@ -24,6 +24,7 @@ class IoComuneMapping(object):
 
         portal_type = item[typekey]
         if portal_type == "News Item":
+            item["tipologia_notizia"] = "Novità"
             item["descrizione_estesa"] = item["text"]
             del item["text"]
         elif portal_type == "Event":
